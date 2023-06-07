@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login-Signup Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
+  <style>
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      height: 60px;
+    }
+
+    .navbar-logo {
+      margin-left: 20px;
+      font-size: 24px;
+    }
+
+    .navbar-menu {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    .navbar-menu-icon {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px;
+    }
+
+    /* Form */
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 120px);
+    }
+
+    .form {
+      width: 400px;
+      max-width: 80%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    .form h1 {
+      text-align: center;
+    }
+
+    .form input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      outline: none;
+    }
+
+    .form input[type="text"],
+    .form input[type="email"],
+    .form input[type="password"] {
+      background-color: #fff;
+    }
+
+    .form input[type="submit"] {
+      background-color: #04AA6D;
+      color: white;
+      cursor: pointer;
+    }
+
+    .form input[type="submit"]:hover {
+      opacity: 0.8;
+    }
+
+    .form p {
+      text-align: center;
+    }
+
+    .form a {
+      color: dodgerblue;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-logo">Welcome to IIT Kanpur</div>
+    <div class="navbar-menu">
+      <div class="navbar-menu-icon"></div>
+      <div class="navbar-menu-icon"></div>
+      <div class="navbar-menu-icon"></div>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="form-container">
+    <form class="form" action="/action_page.php" method="post">
+      
+        <!-- Login Form -->
+        <h1>Login</h1>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="submit" value="Login">
+        <p>Don't have an account? <a href="#" onclick="showSignupForm()">Sign up</a></p>
+
+        <!-- Signup Form -->
+        <h1>Sign Up</h1>
+        <input type="text" placeholder="Enter Name" name="name" required>
+        <input type="email" placeholder="Enter Email" name="email" required>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="submit" value="Sign Up">
+        <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+      
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Login Webpage</p>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Show the login form by default
+    showLoginForm();
+
+    // Function to show the login form and hide the signup form
+    function showLoginForm() {
+      var form = document.querySelector(".form");
+      form.children[0].style.display = "block"; // Login h1
+      form.children[1].style.display = "block"; // Username input
+      form.children[2].style.display = "block"; // Password input
+      form.children[3].style.display = "block"; // Login button
+      form.children[4].style.display = "block"; // Login p
+      form.children[5].style.display = "none"; // Signup h1
+      form.children[6].style.display = "none"; // Name input
+      form.children[7].style.display = "none"; // Email input
+      form.children[8].style.display = "none"; // Password input
+      form.children[9].style.display = "none"; // Signup button
+      form.children[10].style.display = "none"; // Signup p
+    }
+
+    // Function to show the signup form and hide the login form
+    function showSignupForm() {
+      var form = document.querySelector(".form");
+      form.children[0].style.display = "none"; // Login h1
+      form.children[1].style.display = "none"; // Username input
+      form.children[2].style.display = "none"; // Password input
+      form.children[3].style.display = "none"; // Login button
+      form.children[4].style.display = "none"; // Login p
+      form.children[5].style.display = "block"; // Signup h1
+      form.children[6].style.display = "block"; // Name input
+      form.children[7].style.display = "block"; // Email input
+      form.children[8].style.display = "block"; // Password input
+      form.children[9].style.display = "block"; // Signup button
+      form.children[10].style.display = "block"; // Signup p
+    }
+  </script>
+</body>
+</html>
